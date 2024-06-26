@@ -8,6 +8,20 @@
    * 2. Prevent adjustments of font size after orientation changes in iOS.
    */
 
+@font-face {
+  font-family: "BlinkMacSystemFont";
+  src: local("BlinkMacSystemFont"),
+    url("../public/fonts/BlinkMacSystemFont-Black.otf") format("opentype");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "BlinkMacSystemFont";
+  src: local("BlinkMacSystemFont"),
+    url("../public/fonts/BlinkMacSystemFont-Bold.otf") format("opentype");
+  font-weight: 600;
+}
+
 html {
   line-height: 1.15; /* 1 */
   -webkit-text-size-adjust: 100%; /* 2 */
@@ -15,7 +29,7 @@ html {
 
 * {
   box-sizing: border-box;
-  font-family: "SFProText";
+  font-family: "BlinkMacSystemFont";
 }
 
 /* Sections

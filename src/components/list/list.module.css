@@ -1,18 +1,9 @@
-.item {
-  width: 236px;
-  display: inline-block;
-
-  img {
-    width: 100%;
-  }
-}
-
 .list {
   gap: 10px;
-  width: 100%;
-  max-width: 1300px;
-  justify-content: center;
-  column-count: 5;
+
+  .pin-card {
+    max-width: 236px;
+  }
 }
 
 .container {

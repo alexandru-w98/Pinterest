@@ -1,0 +1,118 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  color: rgb(17, 17, 17);
+  cursor: pointer;
+
+  .card {
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 8px;
+    position: relative;
+
+    .card__img {
+      width: 100%;
+    }
+  }
+
+  .card__overlay {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 12px;
+
+    .overlay__top-btn {
+      align-self: flex-end;
+      min-height: 40px;
+      border-radius: 22px;
+      font-size: 12px;
+      padding: 0 14px;
+      font-weight: 600;
+      background-color: rgb(230, 0, 35);
+      color: #fff;
+      border: none;
+    }
+
+    .overlay__bottom-btns {
+      display: flex;
+      justify-content: space-between;
+
+      .button--bottom {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        min-width: 32px;
+        min-height: 32px;
+        border: none;
+      }
+
+      .overlay__bottom-btns--left {
+        border-radius: 16px;
+        padding: 0 8px;
+        font-size: 14px;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        column-gap: 8px;
+        border: none;
+
+        .overlay__bottom-btns--left-text {
+          max-width: 90px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+      }
+
+      .overlay__bottom-btns--right {
+        display: flex;
+        column-gap: 8px;
+      }
+    }
+  }
+
+  .card__description {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+
+  .profile {
+    display: flex;
+    align-items: center;
+    column-gap: 6px;
+    color: inherit;
+    text-decoration: none;
+
+    .profile__img-container {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      overflow: hidden;
+
+      .profile__img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .profile__name {
+      font-size: 14px;
+    }
+  }
+
+  .profile:hover {
+    text-decoration: underline;
+  }
+}
+
+.container:hover {
+  .card__img {
+    filter: brightness(0.7);
+  }
+}

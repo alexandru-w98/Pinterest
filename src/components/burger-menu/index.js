@@ -1,11 +1,12 @@
 import React from "react";
 import { Logo, BurgerMenu as BurgerMenuIcon } from "../../icons";
+import * as styles from "./burger-menu.module.css";
 
 const BurgerMenu = () => {
   return (
-    <div>
+    <div className={styles["container"]}>
       <Logo />
-      <span>Flux Principal</span>
+      <span>Flux principal</span>
       <BurgerMenuIcon />
     </div>
   );
