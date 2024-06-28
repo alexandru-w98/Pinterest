@@ -7,6 +7,7 @@
   padding: 8px;
   border-radius: 999px;
   cursor: pointer;
+  min-width: fit-content;
 }
 
 .container:hover {

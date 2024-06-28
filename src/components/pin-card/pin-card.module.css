@@ -37,6 +37,10 @@
       border: none;
     }
 
+    .overlay__top-btn:hover {
+      background-color: rgb(173, 8, 27);
+    }
+
     .overlay__bottom-btns {
       display: flex;
       justify-content: space-between;
@@ -49,6 +53,11 @@
         min-width: 32px;
         min-height: 32px;
         border: none;
+        background-color: rgba(255, 255, 255, 0.9);
+      }
+
+      .button--bottom:hover {
+        background-color: rgba(255, 255, 255);
       }
 
       .overlay__bottom-btns--left {
@@ -60,12 +69,17 @@
         align-items: center;
         column-gap: 8px;
         border: none;
+        background-color: rgba(255, 255, 255, 0.9);
 
         .overlay__bottom-btns--left-text {
           max-width: 90px;
           overflow: hidden;
           text-overflow: ellipsis;
         }
+      }
+
+      .overlay__bottom-btns--left:hover {
+        background-color: rgba(255, 255, 255);
       }
 
       .overlay__bottom-btns--right {

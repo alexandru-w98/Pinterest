@@ -1,10 +1,15 @@
 .list {
-  gap: 10px;
+  column-gap: 16px;
+  column-count: 5;
 
   .pin-card {
     max-width: 236px;
+    width: 236px;
+    margin-bottom: 32px;
   }
 }
 
 .container {
+  display: flex;
+  justify-content: center;
 }
