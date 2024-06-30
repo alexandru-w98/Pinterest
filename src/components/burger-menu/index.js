@@ -1,12 +1,15 @@
 import React from "react";
 import { Logo, BurgerMenu as BurgerMenuIcon } from "../../icons";
 import * as styles from "./burger-menu.module.css";
+import classNames from "classnames";
 
-const BurgerMenu = () => {
+const BurgerMenu = ({ className }) => {
+  const containerClasses = classNames(styles["container"], className);
+
   return (
-    <div className={styles["container"]}>
+    <div className={containerClasses}>
       <Logo />
-      <span>Flux principal</span>
+      <span>Home Feed</span>
       <BurgerMenuIcon />
     </div>
   );

@@ -1,10 +1,65 @@
 .navbar {
   display: flex;
-  column-gap: 16px;
   align-items: center;
   margin-top: 16px;
 
+  .burger-menu {
+    margin-right: 16px;
+  }
+
   .search {
     min-width: 320px;
+    margin-right: 4px;
+  }
+
+  .nav-btn {
+    padding: 12px;
+    border-radius: 50%;
+    cursor: pointer;
+    fill: rgb(118, 118, 118);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav-btn:hover {
+    background-color: rgb(241, 241, 241);
+  }
+
+  .profile-container {
+    padding: 12px;
+    border-radius: 50%;
+    cursor: pointer;
+
+    .profile {
+      background-color: rgb(241, 241, 241);
+      font-size: 12px;
+      font-weight: 600;
+      padding: 8px;
+      border-radius: 50%;
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  .profile-container:hover {
+    background-color: rgb(241, 241, 241);
+  }
+
+  .settings-btn {
+    padding: 6px;
+    border-radius: 50%;
+    cursor: pointer;
+    fill: rgb(118, 118, 118);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .settings-btn:hover {
+    background-color: rgb(241, 241, 241);
   }
 }
