@@ -1,7 +1,9 @@
 .container {
-  padding: 4px 12px;
-
   .navbar {
-    margin-bottom: 20px;
+    height: 84px;
+  }
+
+  .content {
+    margin-top: 84px;
   }
 }

@@ -7,7 +7,9 @@ const Dashboard = () => {
   return (
     <div className={styles["container"]}>
       <Navbar className={styles["navbar"]} />
-      <List />
+      <div className={styles["content"]}>
+        <List />
+      </div>
     </div>
   );
 };

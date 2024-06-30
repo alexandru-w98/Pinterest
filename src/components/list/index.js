@@ -4,10 +4,13 @@ import Medium from "../../../public/assets/medium.jpg";
 import Small from "../../../public/assets/small.jpg";
 import * as styles from "./list.module.css";
 import PinCard from "../pin-card";
+import classNames from "classnames";
 
-const List = () => {
+const List = ({ className }) => {
+  const containerClasses = classNames(styles["container"], className);
+
   return (
-    <div className={styles["container"]}>
+    <div className={containerClasses}>
       <div className={styles["list"]}>
         <PinCard src={Large} className={styles["pin-card"]} />
         <PinCard src={Medium} className={styles["pin-card"]} />

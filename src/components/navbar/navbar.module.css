@@ -1,7 +1,13 @@
 .navbar {
   display: flex;
   align-items: center;
-  margin-top: 16px;
+  background-color: #fff;
+  z-index: 1;
+  padding: 0 24px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  transition: box-shadow 300ms ease-in-out 0s;
 
   .burger-menu {
     margin-right: 16px;
@@ -62,4 +68,8 @@
   .settings-btn:hover {
     background-color: rgb(241, 241, 241);
   }
+}
+
+.navbar--sticky {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 8px 8px -8px;
 }
