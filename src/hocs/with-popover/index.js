@@ -4,9 +4,9 @@ import useWindowDimensions from "../../hooks/use-window-dimensions";
 
 const withPopover = (PopoverContent) => (WrappedComponent) => {
   const WithPopover = (props) => {
-    const [isPopoverActive, setIsPopoverActive] = useState(true);
+    const [isPopoverActive, setIsPopoverActive] = useState(false);
     const [popoverCoords, setPopoverCoords] = useState({
-      left: -300,
+      left: 0,
       top: "100%",
     });
     const popoverRef = useRef(null);
@@ -22,7 +22,7 @@ const withPopover = (PopoverContent) => (WrappedComponent) => {
     };
 
     useEffect(() => {
-      if (popoverRef && elementRef) {
+      if (popoverRef.current && elementRef.current) {
         const elementPos = elementRef.current.getBoundingClientRect();
 
         const popoverWidth = popoverRef.current.offsetWidth;
@@ -38,10 +38,13 @@ const withPopover = (PopoverContent) => (WrappedComponent) => {
           const updatedX = -elementPos.x;
           setPopoverCoords({ left: updatedX, top: "100%" });
         } else {
-          setPopoverCoords({ left: -popoverWidth / 2, top: "100%" });
+          setPopoverCoords({
+            left: -(popoverWidth - elementPos.width) / 2,
+            top: "100%",
+          });
         }
       }
-    }, [popoverRef, elementRef, width]);
+    }, [popoverRef.current, elementRef.current, width, isPopoverActive]);
 
     return (
       <div className={styles["container"]} tabIndex={0} onBlur={onBlurred}>
