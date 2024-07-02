@@ -11,6 +11,13 @@
 @font-face {
   font-family: "BlinkMacSystemFont";
   src: local("BlinkMacSystemFont"),
+    url("../public/fonts/BlinkMacSystemFont-Light.otf") format("opentype");
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "BlinkMacSystemFont";
+  src: local("BlinkMacSystemFont"),
     url("../public/fonts/BlinkMacSystemFont-Black.otf") format("opentype");
   font-weight: 400;
 }
