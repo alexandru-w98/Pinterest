@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import * as styles from "./with-popover.module.css";
 import useWindowDimensions from "../../hooks/use-window-dimensions";
+import useClickOutside from "../../hooks/use-click-outside";
 
 const withPopover = (PopoverContent) => (WrappedComponent) => {
   const WithPopover = (props) => {
@@ -11,6 +12,7 @@ const withPopover = (PopoverContent) => (WrappedComponent) => {
     });
     const popoverRef = useRef(null);
     const elementRef = useRef(null);
+    const containerRef = useRef(null);
     const { width } = useWindowDimensions();
 
     const onWrapperClicked = () => {
@@ -20,6 +22,8 @@ const withPopover = (PopoverContent) => (WrappedComponent) => {
     const onBlurred = () => {
       setIsPopoverActive(false);
     };
+
+    useClickOutside(containerRef, onBlurred);
 
     useEffect(() => {
       if (popoverRef.current && elementRef.current) {
@@ -31,8 +35,8 @@ const withPopover = (PopoverContent) => (WrappedComponent) => {
         const popoverXLeft =
           elementPos.x + (elementPos.width - popoverWidth) / 2;
 
-        if (popoverXRight > width) {
-          const updatedX = width - popoverWidth - elementPos.x;
+        if (popoverXRight > width - 10) {
+          const updatedX = width - popoverWidth - elementPos.x - 10;
           setPopoverCoords({ left: updatedX, top: "100%" });
         } else if (popoverXLeft < 0) {
           const updatedX = -elementPos.x;
@@ -47,9 +51,9 @@ const withPopover = (PopoverContent) => (WrappedComponent) => {
     }, [popoverRef.current, elementRef.current, width, isPopoverActive]);
 
     return (
-      <div className={styles["container"]} tabIndex={0} onBlur={onBlurred}>
+      <div className={styles["container"]} ref={containerRef}>
         <div onClick={onWrapperClicked} ref={elementRef}>
-          <WrappedComponent {...props} />
+          <WrappedComponent {...props} isClicked={isPopoverActive} />
         </div>
         {isPopoverActive && (
           <div

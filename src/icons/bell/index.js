@@ -1,8 +1,9 @@
 import React from "react";
 
-const Bell = () => {
+const Bell = ({ className }) => {
   return (
     <svg
+      className={className}
       aria-hidden="true"
       height="24"
       role="img"

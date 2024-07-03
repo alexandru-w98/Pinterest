@@ -5,6 +5,7 @@ import SearchBar from "../search-bar";
 import * as styles from "./navbar.module.css";
 import { CaretDown, Message } from "../../icons";
 import NavNotificationBell from "../nav-notification-bell";
+import NavMessageButton from "../nav-message-button";
 
 const Navbar = ({ className }) => {
   const [scrollY, setScrollY] = useState(0);
@@ -34,9 +35,7 @@ const Navbar = ({ className }) => {
         <BurgerMenu className={styles["burger-menu"]} />
         <SearchBar className={styles["search"]} />
         <NavNotificationBell className={styles["nav-btn"]} />
-        <div className={styles["nav-btn"]}>
-          <Message />
-        </div>
+        <NavMessageButton className={styles["nav-btn"]} />
         <div className={styles["profile-container"]}>
           <div className={styles["profile"]}>A</div>
         </div>

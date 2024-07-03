@@ -7,3 +7,6 @@ export { default as X } from "./x";
 export { default as CaretDown } from "./caret-down";
 export { default as Bell } from "./bell";
 export { default as Message } from "./message";
+export { default as Edit } from "./edit";
+export { default as AddFriend } from "./add-friend";
+export { default as Search } from "./search";
