@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
-import BurgerMenu from "../burger-menu";
 import classNames from "classnames";
 import SearchBar from "../search-bar";
 import * as styles from "./navbar.module.css";
-import { CaretDown, Message } from "../../icons";
+import { CaretDown } from "../../icons";
 import NavNotificationBell from "../nav-notification-bell";
 import NavMessageButton from "../nav-message-button";
+import NavLogo from "../nav-logo";
 
 const Navbar = ({ className }) => {
   const [scrollY, setScrollY] = useState(0);
@@ -32,7 +32,7 @@ const Navbar = ({ className }) => {
     <div className={containerClasses}>
       {isBackgroundActive && <div className={styles["background"]} />}
       <div className={styles["content"]}>
-        <BurgerMenu className={styles["burger-menu"]} />
+        <NavLogo className={styles["burger-menu"]} />
         <SearchBar className={styles["search"]} />
         <NavNotificationBell className={styles["nav-btn"]} />
         <NavMessageButton className={styles["nav-btn"]} />

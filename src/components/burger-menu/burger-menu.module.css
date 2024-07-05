@@ -4,12 +4,31 @@
   column-gap: 8px;
   font-weight: 600;
   width: fit-content;
-  padding: 8px;
+  padding: 8px 10px 8px 8px;
   border-radius: 999px;
   cursor: pointer;
   min-width: fit-content;
+  fill: rgb(230, 0, 35);
+
+  .menu__text {
+    text-wrap: nowrap;
+  }
+
+  .menu__burger-icon {
+    fill: rgb(17, 17, 17);
+  }
 }
 
-.container:hover {
+.container:not(.clicked):hover {
   background-color: rgb(226, 226, 226);
+}
+
+.clicked {
+  background-color: rgb(17, 17, 17);
+  color: #fff;
+  fill: #fff;
+
+  .menu__burger-icon {
+    fill: #fff;
+  }
 }
