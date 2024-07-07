@@ -9,7 +9,6 @@ import NavLogo from "../nav-logo";
 
 const Navbar = ({ className }) => {
   const [scrollY, setScrollY] = useState(0);
-  const [isBackgroundActive, setIsBackgroundActive] = useState(false);
 
   const containerClasses = classNames(className, {
     [styles["navbar"]]: true,
@@ -30,7 +29,6 @@ const Navbar = ({ className }) => {
 
   return (
     <div className={containerClasses}>
-      {isBackgroundActive && <div className={styles["background"]} />}
       <div className={styles["content"]}>
         <NavLogo className={styles["burger-menu"]} />
         <SearchBar className={styles["search"]} />

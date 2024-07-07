@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { CaretDown, X } from "../../icons";
+import { X } from "../../icons";
 import * as styles from "./search-bar.module.css";
 import classNames from "classnames";
+import SearchFilters from "./search-filters";
 
 const SearchBar = ({ className }) => {
   const [isHovered, setIsHovered] = useState(false);
@@ -37,10 +38,7 @@ const SearchBar = ({ className }) => {
           </div>
         </div>
       </div>
-      <div className={styles["input__filters"]}>
-        <span>All Pins</span>
-        <CaretDown />
-      </div>
+      <SearchFilters className={styles["filters"]} />
     </div>
   );
 };

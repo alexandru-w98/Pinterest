@@ -7,7 +7,7 @@ import classNames from "classnames";
 const withPopover =
   (PopoverContent, { className, hasBackground } = {}) =>
   (WrappedComponent) => {
-    const WithPopover = (props) => {
+    const WithPopover = ({ className: containerClassName, ...rest }) => {
       const [isPopoverActive, setIsPopoverActive] = useState(false);
       const [popoverCoords, setPopoverCoords] = useState({
         left: 0,
@@ -18,6 +18,10 @@ const withPopover =
       const containerRef = useRef(null);
       const { width } = useWindowDimensions();
       const popoverClasses = classNames(styles["popover"], className);
+      const containerClasses = classNames(
+        styles["container"],
+        containerClassName
+      );
 
       const onWrapperClicked = () => {
         setIsPopoverActive((prev) => !prev);
@@ -55,9 +59,13 @@ const withPopover =
       }, [popoverRef.current, elementRef.current, width, isPopoverActive]);
 
       return (
-        <div className={styles["container"]} ref={containerRef}>
-          <div onClick={onWrapperClicked} ref={elementRef}>
-            <WrappedComponent {...props} isClicked={isPopoverActive} />
+        <div className={containerClasses} ref={containerRef}>
+          <div
+            onClick={onWrapperClicked}
+            ref={elementRef}
+            className={styles["wrapped-container"]}
+          >
+            <WrappedComponent {...rest} isClicked={isPopoverActive} />
           </div>
           {isPopoverActive && (
             <>
